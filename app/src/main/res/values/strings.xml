@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DemoApplication</string>
+    <string name="screen1title">Screen 1</string>
+    <string name="screen2title">Screen 2</string>
+
+</resources>

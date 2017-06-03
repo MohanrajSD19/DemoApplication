@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/build/intermediates/res/merged/debug/layout/dasboard.xml",
+        "source": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/src/main/res/layout/dasboard.xml"
+    },
+    {
+        "merged": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/build/intermediates/res/merged/debug/layout/screen2.xml",
+        "source": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/src/main/res/layout/screen2.xml"
+    },
+    {
+        "merged": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/build/intermediates/res/merged/debug/layout/resident.xml",
+        "source": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/src/main/res/layout/resident.xml"
+    },
+    {
+        "merged": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/build/intermediates/res/merged/debug/layout/health.xml",
+        "source": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/src/main/res/layout/health.xml"
+    },
+    {
+        "merged": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/build/intermediates/res/merged/debug/layout/family.xml",
+        "source": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/src/main/res/layout/family.xml"
+    },
+    {
+        "merged": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/build/intermediates/res/merged/debug/layout/signinout.xml",
+        "source": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/src/main/res/layout/signinout.xml"
+    },
+    {
+        "merged": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/build/intermediates/res/merged/debug/layout/screen1.xml",
+        "source": "/home/innobot-linux-4/AndroidStudioProjects/DemoApplication/app/src/main/res/layout/screen1.xml"
+    }
+]
