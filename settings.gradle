@@ -1,1 +1,1 @@
-include ':app', ':animation', ':idletimetracker'
+include ':app', ':animation', ':idletimetracker', ':unittesting'

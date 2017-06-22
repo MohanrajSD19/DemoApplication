@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -12,6 +13,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
@@ -24,6 +26,8 @@ import android.widget.ToggleButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
      ImageView img_animation = null;
@@ -32,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     //public static final long DISCONNECT_TIMEOUT = 300000; // 5 min = 5 * 60 * 1000 ms
 
     public static final long DISCONNECT_TIMEOUT = 1000; // 5 min = 5 * 60 * 1000 ms
+    //public static final int IDLE_DELAY_MINUTES = 1; // 5 min = 5 * 60 * 1000 ms
+    public static final int IDLE_DELAY_MINUTES = 300000; // 5 min = 5 * 60 * 1000 ms
+    private Timer timer;
     private float mRandomFloat ,fromXDelta=0.0f,toXDelta=0.0f,fromYDelta=0.0f,toYDelta=0.0f;
     int START = 50;
     int END = 800;
@@ -46,19 +53,51 @@ public class MainActivity extends AppCompatActivity {
         //setContentView(new MyView(this));
         //setRandomDeltaValues();
         setConfigviews();
-        getUniqueRandomNumber();
+
     }
 
-    @Override
+   /* @Override
     public void onUserInteraction(){
-        //resetDisconnectTimer();
-    }
+        resetDisconnectTimer();
+    }*/
 
-    @Override
+   /* @Override
     public void onResume() {
         super.onResume();
-        //resetDisconnectTimer();
+        resetDisconnectTimer();
+    }*/
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (timer != null) {
+            timer.cancel();
+            Log.i("Main", "cancel timer onResume");
+            timer = null;
+        }
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (timer != null) {
+            timer.cancel();
+            Log.i("Main", "cancel timer onPause");
+            timer = null;
+        }
+        setAnimationTimeDelay();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (timer != null) {
+            timer.cancel();
+            Log.i("Main", "cancel timer onDestroy");
+            timer = null;
+        }
+    }
+
 
 
     private void setConfigviews(){
@@ -241,8 +280,8 @@ public class MainActivity extends AppCompatActivity {
             list.add(i);
         }
         Collections.shuffle(list);
-        int jj=0;
-        for ( jj=50; jj<54; jj++) {
+        //int jj=0;
+        for ( int jj=50; jj<54; jj++) {
             System.out.println("UniqueRandomNumber:"+list.get(jj));
             switch(jj){
 
@@ -265,5 +304,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    private void setAnimationTimeDelay(){
+        timer = new Timer();
+        Log.i("Main", "Invoking Animation timer");
+        HandAnimationTask mHandAnimationTask = new HandAnimationTask();
+        timer.schedule(mHandAnimationTask, IDLE_DELAY_MINUTES); //auto logout in 5 minutes
+    }
+
+    private class HandAnimationTask extends TimerTask {
+
+        @Override
+        public void run() {
+            getUniqueRandomNumber();
+        }
+    }
+
+
 
 }

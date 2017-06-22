@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/idletimetracker/idletimetracker.iml" filepath="$PROJECT_DIR$/idletimetracker/idletimetracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unittesting/unittesting.iml" filepath="$PROJECT_DIR$/unittesting/unittesting.iml" />
     </modules>
   </component>
 </project>
